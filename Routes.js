@@ -1,13 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import { withRouter, Route, Switch } from 'react-router-dom';
 import { Alert, StyleSheet, Text, View, TextInput, Button } from 'react-native';
 
-export default function Nav() {
+export default class Routes extends React.Component {
+
+    componentDidMount() {
+    }
+
+    render() {
     return (
         <View style={styles.container}>
             <Text style={styles.header}>App Name</Text>
         </View>
     )
+    }
 }
 
 const styles = StyleSheet.create({
