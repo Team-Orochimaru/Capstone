@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Alert, StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import Nav from './Nav';
+import AppNavigator from './AppNavigator';
 
 export default class App extends React.Component {
 
@@ -17,7 +18,7 @@ export default class App extends React.Component {
   onLogin() {
     const { username, password } = this.state;
 
-    Alert.alert('Credentials', `${username} + ${password}`);
+    Alert.alert('Login Credentials:', `${username} + ${password}`);
   }
 
   render() {
@@ -65,20 +66,15 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   main: {
-    backgroundColor: '#fff',
   },
   loginContainer: {
-    flex: 1,
-    margin: 'auto',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderColor: '#000',
+    backgroundColor: '#fff',
+    padding: 30,
   },
   title: {
     fontWeight: 'bold',
-    alignContent: 'flex-start',
     fontSize: 28,
-    marginVertical: 20,
+    marginTop: 20,
   },
   textInput: {
     backgroundColor: '#DDDDDD',
@@ -90,12 +86,9 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   submitButton: {
-    padding: 10,
-    margin: 10,
-    backgroundColor: '#27A2F8'
+    backgroundColor: '#27A2F8',
   },
-  signUpButtonText: {
-    padding: 10,
-    backgroundColor: '#FF6600'
+  signUpButton: {
+    backgroundColor: '#27A2F8',
   }
 });
