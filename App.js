@@ -18,31 +18,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  main: {},
-  loginContainer: {
-    backgroundColor: '#fff',
-    padding: 30,
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 28,
-    marginTop: 20,
-  },
-  textInput: {
-    backgroundColor: '#DDDDDD',
-    fontSize: 16,
-    padding: 10,
-    marginTop: 10,
-  },
-  buttonContainer: {
-    padding: 20,
-  },
-  submitButton: {
-    backgroundColor: '#27A2F8',
-  },
-  signUpButton: {
-    backgroundColor: '#27A2F8',
-  },
-});
