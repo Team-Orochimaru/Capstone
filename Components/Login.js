@@ -23,7 +23,7 @@ export default class Login extends React.Component {
     const { navigation } = this.props;
     console.log(this.props);
     return (
-      <View style={styles.main}>
+      <View>
         <Nav />
         <View style={styles.loginContainer}>
           <Text style={styles.title}>Login</Text>
@@ -65,7 +65,6 @@ export default class Login extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  main: {},
   loginContainer: {
     backgroundColor: '#fff',
     padding: 30,
