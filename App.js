@@ -2,71 +2,25 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Alert, StyleSheet, Text, View, TextInput, Button } from 'react-native';
 import Nav from './Nav';
-import AppNavigator from './AppNavigator';
+import Login from './Components/Login';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import AccountOverview from './Components/AccountOverview';
 
-export default class App extends React.Component {
-
-  constructor(props) {
-    super(props);
-    
-    this.state = {
-      username: '',
-      password: '',
-    };
-  }
-
-  onLogin() {
-    const { username, password } = this.state;
-
-    Alert.alert('Login Credentials:', `${username} + ${password}`);
-  }
-
-  render() {
-    return (
-      <View style={styles.main}>
-        <Nav />
-        <View style={styles.loginContainer}>
-        <Text style={styles.title}>Login</Text>
-
-        <TextInput
-          value={this.state.username}
-          onChangeText={(username) => this.setState({ username })}
-          placeholder={'Username'}
-          style={styles.textInput}
-        />
-        <TextInput
-          value={this.state.password}
-          onChangeText={(password) => this.setState({ password })}
-          placeholder={'Password'}
-          secureTextEntry={true}
-          style={styles.textInput}
-        />
-        
-        <View style={styles.buttonContainer}>
-        <Button
-          title={'Submit'}
-          style={styles.submitButton}
-          onPress={this.onLogin.bind(this)}
-          color="#27A2F8"
-        />
-
-        <Button
-          title={'Sign Up'}
-          style={styles.signUpButton}
-          onPress={this.onLogin.bind(this)}
-          color="#FF6600"
-          />
-          </View>
-
-        </View>
-      </View>
-    );
-  }
+const Stack = createStackNavigator();
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="AccountOverview" component={AccountOverview} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 }
 
 const styles = StyleSheet.create({
-  main: {
-  },
+  main: {},
   loginContainer: {
     backgroundColor: '#fff',
     padding: 30,
@@ -90,5 +44,5 @@ const styles = StyleSheet.create({
   },
   signUpButton: {
     backgroundColor: '#27A2F8',
-  }
+  },
 });
