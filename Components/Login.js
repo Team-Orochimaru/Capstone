@@ -48,9 +48,7 @@ export default class Login extends React.Component {
               style={styles.submitButton}
               onPress={this.onLogin.bind(this)}
               color="#27A2F8"
-              onPress={() =>
-                navigation.navigate('App', { screen: 'Account Overview' })
-              }
+              onPress={() => navigation.navigate('AccountOverview')}
             />
 
             <Button
